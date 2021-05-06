@@ -1,6 +1,7 @@
 import { Injectable } from "@nestjs/common";
 import { Scrum } from "../domain/scrum";
 import { ScrumRepository } from "../repository/scrum.repository";
+import { ScrumServiceCreateRequest, ScrumServiceFindAllRequest } from "./dto/scrum.service.dto";
 
 @Injectable()
 export class ScrumService {
@@ -8,11 +9,13 @@ export class ScrumService {
 		private readonly scrumRepository: ScrumRepository
 	){}
 
-	async findAll(): Promise<Scrum> {
-		let storyPoint = await this.scrumRepository.findAll();
+	async findAll(request: ScrumServiceFindAllRequest): Promise<Scrum> {
+		let storyPoint = await this.scrumRepository.findAll(request);
 		return storyPoint;
 	}
+
+	async create(request: ScrumServiceCreateRequest): Promise<Scrum> {
+		let savedPoint = await this.scrumRepository.createOne(request);
+		return;
+	}
 }
-
-
-

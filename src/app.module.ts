@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { ScrumController } from './scrum/controller/scrum.controller';
+import { ScrumEntity } from './scrum/entity/scrum.entity';
 import { ScrumRepository } from './scrum/repository/scrum.repository';
 import { ScrumService } from './scrum/service/scrum.service';
 
@@ -17,7 +18,7 @@ import { ScrumService } from './scrum/service/scrum.service';
       synchronize: true,
     }),
     TypeOrmModule.forFeature([
-      // ScrumEntity,
+      ScrumEntity,
     ])
   ],
   controllers: [ScrumController],

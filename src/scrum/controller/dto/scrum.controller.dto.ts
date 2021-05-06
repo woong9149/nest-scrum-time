@@ -2,16 +2,24 @@ import { IsNumber, IsString } from "class-validator";
 /**
  *  point
  * 	userId
- * 	storyId
+ * 	storyId?
  */
 export class ScrumControllerCreateRequest {
-	@IsNumber()
-	point: number;
 
 	@IsString()
 	userId: string;
+
+	@IsNumber()
+	storyPoint: number;
+
+	@IsNumber()
+	storySerial: number;
+
+	@IsString()
+	workerId: string;
+
+	@IsString()
+	authority: string;
 }
-
-
 
 

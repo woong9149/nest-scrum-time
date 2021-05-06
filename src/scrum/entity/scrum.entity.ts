@@ -7,10 +7,16 @@ export class ScrumEntity {
 	no: number;
 
 	@Column()
-	point: number;
+	storyPoint: number;
 
 	@Column()
 	userId: string;
+
+	@Column()
+	storySerial: number;
+
+	@Column()
+	workerId: string;
 
 	@Column()
 	authority: string;

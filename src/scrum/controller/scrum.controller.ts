@@ -15,8 +15,9 @@ export class ScrumController {
 
 	@Post()
 	async create(@Body() scrumData: ScrumControllerCreateRequest) {
-		// await this.scrumService.add();
+		await this.scrumService.create(scrumData);
 		return `This story point is ${scrumData}` ;
 	}
+
 
 }
