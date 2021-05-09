@@ -10,8 +10,8 @@ export class ScrumController {
 
 	@Get('/:id')
 	async getOne(@Param('id') storySerial: number) {
-		await this.scrumService.findAll(storySerial);
-		return `This will return one movie with the id: ${storySerial}`;
+		const result = await this.scrumService.findAll(storySerial);
+		return result;
 	}
 
 	@Post()

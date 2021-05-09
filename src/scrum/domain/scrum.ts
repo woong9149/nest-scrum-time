@@ -5,14 +5,6 @@ export class Scrum {
 		this.props = scrumProps;
 	}
 
-	getStoryPoint() {
-		return this.props.storyPoint;
-	}
-
-	getUserId() {
-		return this.props.userId;
-	}
-
 	getWorkerId() {
 		return this.props.workerId;
 	}
@@ -21,22 +13,22 @@ export class Scrum {
 		return this.props.storySerial;
 	}
 
-	getAuthority() {
-		return this.props.authority;
+	getAveragePoint() {
+		return this.props.point
 	}
 
-	getAveragePoint() {
-		// return this.props.averagePoint;
+	getMinimumPoint() {
+		return this.props.point
+	}
+
+	getMaximumPoint() {
 		return this.props.point
 	}
 }
 
 export interface ScrumProps {
-	storyPoint: number;
 	storySerial: number;
-	userId: string;
 	workerId: string;
-	authority: string;
 	averagePoint: number;
 	minimumPoint: number;
 	maximumPoint: number;

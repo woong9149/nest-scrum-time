@@ -10,7 +10,7 @@ export class ScrumService {
 	){}
 
 	async findAll(request: ScrumServiceFindAllRequest): Promise<Scrum> {
-		let storyPoint = await this.scrumRepository.findAll(request);
+		let storyPoint = await this.scrumRepository.findAll(result => result.storySerial === request);
 		return storyPoint;
 	};
 
@@ -18,5 +18,5 @@ export class ScrumService {
 		let savedPoint = await this.scrumRepository.createOne(request);
 		return;
 	};
-	
+
 }
