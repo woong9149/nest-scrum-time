@@ -27,7 +27,7 @@ export class Scrum {
 
 	getAveragePoint() {
 		// return this.props.averagePoint;
-		this.props.point
+		return this.props.point
 	}
 }
 

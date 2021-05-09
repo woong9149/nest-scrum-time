@@ -9,8 +9,9 @@ export class ScrumController {
 	){}
 
 	@Get('/:id')
-	getOne(@Param('id') movieId: string) {
-		return `This will return one movie with the id: ${movieId}`;
+	async getOne(@Param('id') storySerial: number) {
+		await this.scrumService.findAll(storySerial);
+		return `This will return one movie with the id: ${storySerial}`;
 	}
 
 	@Post()
@@ -18,6 +19,5 @@ export class ScrumController {
 		await this.scrumService.create(scrumData);
 		return `This story point is ${scrumData}` ;
 	}
-
 
 }

@@ -19,8 +19,8 @@ export class ScrumRepository {
 		for(let i = 0; i < len; i++) {
 			total += entities[i].storyPoint;
 		}
-		const averagePoint = Math.ceil(total / len) ;
-		// return entities;
+		const averagePoint = Math.ceil(total / len);
+	
 		return ;
 	}
 
