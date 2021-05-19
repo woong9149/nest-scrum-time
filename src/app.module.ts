@@ -22,6 +22,6 @@ import { ScrumService } from './scrum/service/scrum.service';
     ])
   ],
   controllers: [ScrumController],
-  providers: [ScrumService, ScrumRepository],
+  providers: [ScrumService, ScrumRepository,],
 })
 export class AppModule {}
