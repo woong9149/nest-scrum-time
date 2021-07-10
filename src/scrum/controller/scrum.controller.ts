@@ -1,4 +1,6 @@
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
+import { Scrum } from '../domain/scrum';
+import { ScrumEntity } from '../entity/scrum.entity';
 import { ScrumService } from "../service/scrum.service";
 import { ScrumControllerCreateRequest } from './dto/scrum.controller.dto';
 
@@ -8,9 +10,16 @@ export class ScrumController {
 		private readonly scrumService: ScrumService
 	){}
 
+	@Get()
+	async getAll() {
+		return 'success';
+		// const result = await this.scrumService.findAll();
+		// return result;
+	}
+
 	@Get('/:id')
 	async getOne(@Param('id') storySerial: number) {
-		const result = await this.scrumService.findAll(storySerial);
+		const result = await this.scrumService.findOne(storySerial);
 		return result;
 	}
 

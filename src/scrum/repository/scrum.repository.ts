@@ -12,7 +12,12 @@ export class ScrumRepository {
 		private readonly scrumEntityRepository: Repository<ScrumEntity>
 	) {}
 
-	async findAll(request): Promise<ScrumEntity[]> {
+	async findAll(): Promise<ScrumEntity[]> {
+		let entities: ScrumEntity[] = await this.scrumEntityRepository.find();
+		return entities;
+	}
+
+	async findOne(request): Promise<ScrumEntity[]> {
 		let entities: ScrumEntity[] = await this.scrumEntityRepository.find(request);
 		return entities;
 	}
